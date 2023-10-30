@@ -21,7 +21,6 @@ class helpPage extends StatelessWidget {
                 '¿Cómo hago algo?', 'Puedes hacer algo así...'),
             _buildPreguntaRespuesta('¿Cómo cambio mi contraseña?',
                 'Para cambiar tu contraseña, sigue estos pasos...'),
-            // Agrega más preguntas y respuestas según sea necesario
           ],
         ),
       ),

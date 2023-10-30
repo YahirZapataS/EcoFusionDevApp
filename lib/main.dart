@@ -9,10 +9,6 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 void _signOut() {
-  // Lógica para cerrar sesión (si es necesario)
-  // ...
-
-  // Redirigir a la pantalla de inicio de sesión
   Navigator.pushReplacement(
     context as BuildContext,
     MaterialPageRoute(builder: (context) => LoginPage()),
@@ -65,7 +61,7 @@ class _InicioState extends State<Inicio> {
             ListTile(
               title: const Text('Perfil'),
               onTap: () {
-                Navigator.pop(context); // Cierra el menú lateral
+                Navigator.pop(context);
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => profile()),
@@ -75,7 +71,7 @@ class _InicioState extends State<Inicio> {
             ListTile(
               title: const Text('Ayuda'),
               onTap: () {
-                Navigator.pop(context); // Cierra el menú lateral
+                Navigator.pop(context);
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => helpPage()),
@@ -85,9 +81,8 @@ class _InicioState extends State<Inicio> {
             ListTile(
               title: const Text('Cerrar Sesión'),
               onTap: () {
-                // Acción al seleccionar Cerrar Sesión
-                Navigator.pop(context); // Cierra el menú lateral
-                _signOut(); // Llama a la función para cerrar sesión
+                Navigator.pop(context);
+                _signOut();
               },
             ),
           ],

@@ -112,7 +112,6 @@ class _PerfilPageState extends State<profile> {
             ElevatedButton(
               onPressed: () async {
                 await _saveProfileData();
-                // Implementa cualquier otra lógica necesaria después de guardar los datos del perfil
               },
               child: const Text('Guardar'),
             ),

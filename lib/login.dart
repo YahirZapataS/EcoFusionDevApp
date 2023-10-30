@@ -18,19 +18,12 @@ class _LoginPageState extends State<LoginPage> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      // Aquí puedes realizar la lógica de autenticación,
-      // como verificar el nombre de usuario y la contraseña
       String username = _usernameController.text;
       String password = _passwordController.text;
 
-      // Lógica de autenticación (por ejemplo, comparar con credenciales almacenadas)
-      // Puedes agregar tu lógica aquí
-
-      // Si la autenticación es exitosa, puedes navegar a la siguiente pantalla
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-            builder: (context) => Inicio()), // Redirige a la clase Main
+        MaterialPageRoute(builder: (context) => Inicio()),
       );
     }
   }
