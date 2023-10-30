@@ -1,4 +1,4 @@
-# flutter_application_1
+# EcoFusionDevApp
 
 A new Flutter project.
 
