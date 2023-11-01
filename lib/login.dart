@@ -1,29 +1,34 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
       title: 'Inicio de Sesión',
       home: LoginPage(),
     ));
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
+      // ignore: unused_local_variable
       String username = _usernameController.text;
+      // ignore: unused_local_variable
       String password = _passwordController.text;
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Inicio()),
+        MaterialPageRoute(builder: (context) => const Inicio()),
       );
     }
   }
@@ -32,17 +37,18 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inicio de Sesión'),
+        title: const Text('Inicio de Sesión'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             children: <Widget>[
               TextFormField(
                 controller: _usernameController,
-                decoration: InputDecoration(labelText: 'Nombre de Usuario'),
+                decoration:
+                    const InputDecoration(labelText: 'Nombre de Usuario'),
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Por favor, ingresa tu nombre de usuario';
@@ -50,10 +56,10 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Contraseña'),
+                decoration: const InputDecoration(labelText: 'Contraseña'),
                 obscureText: true,
                 validator: (value) {
                   if (value!.isEmpty) {
